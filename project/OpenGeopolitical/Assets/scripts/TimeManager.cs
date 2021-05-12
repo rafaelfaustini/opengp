@@ -5,6 +5,10 @@ public class TimeManager : MonoBehaviour
 {
     public static Action OnMinuteChanged;
     public static Action OnHourChanged;
+    public static Action OnDayChanged;
+    public static Action OnMonthChanged;
+
+
     public static DateTime CurrentDateTime { get; private set; }
     public static bool IsPaused { get; private set; }
 
@@ -32,7 +36,6 @@ public class TimeManager : MonoBehaviour
     {
         multiplier = _multiplier;
         minuteToRealTime = baseminuteToRealTime / _multiplier;
-        Debug.LogWarning("minuteTORealTime: "+minuteToRealTime.ToString());
     }
     void Start()
     {
@@ -46,18 +49,27 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DateTime beforeTimeChanged;
         if (!IsPaused)
         {
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
+                beforeTimeChanged = CurrentDateTime;
                 CurrentDateTime = CurrentDateTime.AddMinutes(1*multiplier);
                 OnMinuteChanged?.Invoke();
-                if (CurrentDateTime.Minute == 0)
+                if (CurrentDateTime.Hour != beforeTimeChanged.Hour)
                 {
                     OnHourChanged?.Invoke();
+                    if (CurrentDateTime.Day != beforeTimeChanged.Day)
+                    {
+                        OnDayChanged?.Invoke();
+                        if (CurrentDateTime.Month != beforeTimeChanged.Month)
+                        {
+                            OnMonthChanged?.Invoke();
+                        }
+                    }
                 }
-
                    timer = minuteToRealTime;
             }
         }

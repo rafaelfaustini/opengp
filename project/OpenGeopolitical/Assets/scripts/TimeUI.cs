@@ -64,6 +64,7 @@ public class TimeUI : MonoBehaviour
             togglePauseSprite();
         }
     }
+
     private void OnEnable()
     {
         TimeManager.OnMinuteChanged += UpdateTime;
