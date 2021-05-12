@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
@@ -10,10 +8,16 @@ public class TimeManager : MonoBehaviour
     public static DateTime CurrentDateTime { get; private set; }
     public static bool IsPaused { get; private set; }
 
-    private float minuteToRealTime = 0.00001736f; // 15 seconds per day
-    private float timer;
-    // Start is called before the first frame update
+    public float dayToRealTime = 15f; // 15 seconds per day
+    private static float baseminuteToRealTime;
+    private static float minuteToRealTime;
+    private static int multiplier;
 
+    private float timer;
+    public void Awake()
+    {
+        QualitySettings.vSyncCount = 1;
+    }
     public static void Pause()
     {
         IsPaused = true;
@@ -23,9 +27,18 @@ public class TimeManager : MonoBehaviour
     {
         IsPaused = false;
     }
+
+    public static void FastForward(int _multiplier)
+    {
+        multiplier = _multiplier;
+        minuteToRealTime = baseminuteToRealTime / _multiplier;
+        Debug.LogWarning("minuteTORealTime: "+minuteToRealTime.ToString());
+    }
     void Start()
     {
-        CurrentDateTime = new DateTime(DateTime.Now.Year, 1, 1); // For testing it starts the game in the beginning of your year
+        CurrentDateTime = new DateTime(DateTime.Now.Year, 1, 1); // For testing, it starts the game in the beginning of your year
+        minuteToRealTime = (dayToRealTime * 60) / 86400;
+        baseminuteToRealTime = minuteToRealTime;
         timer = minuteToRealTime;
         IsPaused = false;
     }
@@ -38,7 +51,7 @@ public class TimeManager : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                CurrentDateTime = CurrentDateTime.AddMinutes(1);
+                CurrentDateTime = CurrentDateTime.AddMinutes(1*multiplier);
                 OnMinuteChanged?.Invoke();
                 if (CurrentDateTime.Minute == 0)
                 {

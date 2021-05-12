@@ -8,9 +8,37 @@ public class TimeUI : MonoBehaviour
     public Button pauseButton;
     [SerializeField]
     private Sprite[] pauseSprites;
+    public Button fastForwardButton_one;
+    public Button fastForwardButton_two;
+    public Button fastForwardButton_three;
+    [SerializeField]
+    private Sprite[] fastforwardSprites;
     public Text timeText;
     public int isPaused { get; set; }
 
+    public void FastForward_1X()
+    {
+        fastForwardButton_one.image.sprite = fastforwardSprites[1];
+        fastForwardButton_two.image.sprite = fastforwardSprites[0];
+        fastForwardButton_three.image.sprite = fastforwardSprites[0];
+        TimeManager.FastForward(1);
+    }
+
+    public void FastForward_5X()
+    {
+        fastForwardButton_one.image.sprite = fastforwardSprites[1];
+        fastForwardButton_two.image.sprite = fastforwardSprites[1];
+        fastForwardButton_three.image.sprite = fastforwardSprites[0];
+        TimeManager.FastForward(5);
+    }
+
+    public void FastForward_20X()
+    {
+        fastForwardButton_one.image.sprite = fastforwardSprites[1];
+        fastForwardButton_two.image.sprite = fastforwardSprites[1];
+        fastForwardButton_three.image.sprite = fastforwardSprites[1];
+        TimeManager.FastForward(20);
+    }
 
     private void UpdateTime()
     {
@@ -40,6 +68,7 @@ public class TimeUI : MonoBehaviour
     {
         TimeManager.OnMinuteChanged += UpdateTime;
         TimeManager.OnHourChanged += UpdateTime;
+        FastForward_1X();
     }
     private void OnDisable()
     {
