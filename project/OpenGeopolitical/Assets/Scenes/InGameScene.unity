@@ -209,7 +209,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 157874152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 994823387}
+        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+        m_MethodName: FastForward_5X
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &157874152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 367674825}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 994823387}
+        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+        m_MethodName: FastForward_1X
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &367674825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +595,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 18.944223
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -707,7 +731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 13.599976, y: 20.7}
+  m_AnchoredPosition: {x: 13.599976, y: 20.700012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994823385
@@ -764,6 +788,57 @@ MonoBehaviour:
   pauseSprites:
   - {fileID: 21300000, guid: 31856a5b1869b8c4ba4eead0e2df005d, type: 3}
   - {fileID: 21300000, guid: c25a4b2334f363e4185bab4dd744f676, type: 3}
+  fastForwardButton_one: {fileID: 367674824}
+  fastForwardButton_two: {fileID: 157874151}
+  fastForwardButton_three: {fileID: 1838818687}
+  fastforwardSprites:
+  - {fileID: 21300000, guid: 0516211db3e027543af12dd7900231b2, type: 3}
+  - {fileID: 21300000, guid: 68d4fe449d4f93543b37f663b9d2665f, type: 3}
+  timeText: {fileID: 1364472332}
+--- !u!1 &1237693928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1237693930}
+  - component: {fileID: 1237693929}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1237693929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237693928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d30c8479300644fa74cd433d08a31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayToRealTime: 15
+--- !u!4 &1237693930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237693928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 551.4735, y: 201.84045, z: -91.630394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364472330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1838818688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 994823387}
+        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+        m_MethodName: FastForward_20X
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1838818688
 MonoBehaviour:
   m_ObjectHideFlags: 0
