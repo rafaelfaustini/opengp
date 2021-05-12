@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
     public static Action OnDayChanged;
     public static Action OnMonthChanged;
 
-
+    public string InitialDate;
     public static DateTime CurrentDateTime { get; private set; }
     public static bool IsPaused { get; private set; }
 
@@ -39,7 +39,7 @@ public class TimeManager : MonoBehaviour
     }
     void Start()
     {
-        CurrentDateTime = new DateTime(DateTime.Now.Year, 1, 1); // For testing, it starts the game in the beginning of your year
+        CurrentDateTime = DateTime.Parse(InitialDate);
         minuteToRealTime = (dayToRealTime * 60) / 86400;
         baseminuteToRealTime = minuteToRealTime;
         timer = minuteToRealTime;
