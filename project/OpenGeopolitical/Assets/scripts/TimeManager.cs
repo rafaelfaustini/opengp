@@ -7,14 +7,10 @@ public class TimeManager : MonoBehaviour
 {
     public static Action OnMinuteChanged;
     public static Action OnHourChanged;
-
-    public static int Minute { get; private set; }
-
-    public static int Hour { get; private set; }
-
+    public static DateTime CurrentDateTime { get; private set; }
     public static bool IsPaused { get; private set; }
 
-    private float minuteToRealTime = 0.5f;
+    private float minuteToRealTime = 0.00001736f; // 15 seconds per day
     private float timer;
     // Start is called before the first frame update
 
@@ -29,8 +25,7 @@ public class TimeManager : MonoBehaviour
     }
     void Start()
     {
-        Minute = 0;
-        Hour = 0;
+        CurrentDateTime = new DateTime(DateTime.Now.Year, 1, 1); // For testing it starts the game in the beginning of your year
         timer = minuteToRealTime;
         IsPaused = false;
     }
@@ -43,16 +38,14 @@ public class TimeManager : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                Minute++;
+                CurrentDateTime = CurrentDateTime.AddMinutes(1);
                 OnMinuteChanged?.Invoke();
-                if (Minute >= 60)
+                if (CurrentDateTime.Minute == 0)
                 {
-                    Hour++;
-                    Minute = 0;
                     OnHourChanged?.Invoke();
                 }
 
-                timer = minuteToRealTime;
+                   timer = minuteToRealTime;
             }
         }
     }

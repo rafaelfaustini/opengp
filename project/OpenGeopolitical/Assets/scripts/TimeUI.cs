@@ -14,7 +14,8 @@ public class TimeUI : MonoBehaviour
 
     private void UpdateTime()
     {
-        timeText.text = $"{TimeManager.Hour:00}:{TimeManager.Minute:00}";
+        string text = TimeManager.CurrentDateTime.ToString("ddd MMM dd yyyy HH:mm");
+        timeText.text = text;
     }
 
     private void togglePauseSprite()
