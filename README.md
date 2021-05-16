@@ -8,7 +8,7 @@
      <a href="https://github.com/rafaelfaustini/opengp/issues">
       <img alt="Issues" src="https://img.shields.io/github/issues/rafaelfaustini/opengp?color=f44336" />
     </a>
-     <a href="https://github.com/rafaelfaustini/rafaelfaustini.com.br/pulls">
+     <a href="https://github.com/rafaelfaustini/opengp/pulls">
       <img alt="Issues" src="https://img.shields.io/github/issues-pr/rafaelfaustini/opengp?color=f44336" />
     </a>
   </p>
