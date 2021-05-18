@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,6 @@ public class TimeUI : MonoBehaviour
         fastForwardButton_one.image.sprite = fastforwardSprites[1];
         fastForwardButton_two.image.sprite = fastforwardSprites[0];
         fastForwardButton_three.image.sprite = fastforwardSprites[0];
-        TimeManager.FastForward(1);
     }
 
     public void FastForward_5X()
@@ -29,7 +29,6 @@ public class TimeUI : MonoBehaviour
         fastForwardButton_one.image.sprite = fastforwardSprites[1];
         fastForwardButton_two.image.sprite = fastforwardSprites[1];
         fastForwardButton_three.image.sprite = fastforwardSprites[0];
-        TimeManager.FastForward(5);
     }
 
     public void FastForward_20X()
@@ -37,12 +36,11 @@ public class TimeUI : MonoBehaviour
         fastForwardButton_one.image.sprite = fastforwardSprites[1];
         fastForwardButton_two.image.sprite = fastforwardSprites[1];
         fastForwardButton_three.image.sprite = fastforwardSprites[1];
-        TimeManager.FastForward(20);
     }
 
-    private void UpdateTime()
+    public void UpdateTime(DateTime dateTime)
     {
-        string text = TimeManager.CurrentDateTime.ToString("ddd MMM dd yyyy HH:mm");
+        string text = dateTime.ToString("ddd MMM dd yyyy HH:mm");
         timeText.text = text;
     }
 
@@ -52,29 +50,12 @@ public class TimeUI : MonoBehaviour
     }
     public void Pause()
     {
-        if (isPaused == 1)
-        {
-            TimeManager.UnPause();
-            isPaused = 0;
-            togglePauseSprite();
-        } else
-        {
-            TimeManager.Pause();
-            isPaused = 1;
-            togglePauseSprite();
-        }
+        isPaused = 1;
+        togglePauseSprite();
     }
-
-    private void OnEnable()
+    public void UnPause()
     {
-        TimeManager.OnMinuteChanged += UpdateTime;
-        TimeManager.OnHourChanged += UpdateTime;
-        FastForward_1X();
+        isPaused = 0;
+        togglePauseSprite();
     }
-    private void OnDisable()
-    {
-        TimeManager.OnMinuteChanged -= UpdateTime;
-        TimeManager.OnHourChanged -= UpdateTime;
-    }
-
 }
