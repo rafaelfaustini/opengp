@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface IEventManager
 {
-    public void runEvents(DateTime currentTime);
+    public void RunEvents(DateTime currentTime);
 }

@@ -39,7 +39,7 @@ public class TimeManager
         minuteToRealTime = baseminuteToRealTime / _multiplier;
     }
 
-    public void HandleFrame(float frameInterval)
+    public bool HandleFrame(float frameInterval)
     {
         if (!IsPaused)
         {
@@ -48,7 +48,9 @@ public class TimeManager
             {
                 CurrentDateTime = CurrentDateTime.AddMinutes(1*multiplier);
                 timer = minuteToRealTime;
+                return true;
             }
         }
+        return false;
     }
 }

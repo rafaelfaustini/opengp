@@ -16,21 +16,23 @@ public class TimeOrchestrator : MonoBehaviour
         this.timeManager = timeManager;
         this.timeUI = timeUI;
         FastForward_1X();
-        Pause();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        timeManager.HandleFrame(Time.deltaTime);
-        timeUI.UpdateTime(timeManager.CurrentDateTime);
-        timedEventManager.runEvents(timeManager.CurrentDateTime);
+        bool handled = timeManager.HandleFrame(Time.deltaTime);
+        if (handled)
+        {
+            timeUI.UpdateTime(timeManager.CurrentDateTime);
+            timedEventManager.RunEvents(timeManager.CurrentDateTime);
+        }
     }
 
     public void Pause()
     {
-        if (timeUI.isPaused.Equals(0))
+        if (timeUI.IsPaused.Equals(0))
         {
             timeUI.Pause();
             timeManager.Pause();

@@ -16,7 +16,7 @@ public class TimeUI
     [SerializeField]
     public Sprite[] fastforwardSprites;
     public Text timeText;
-    public int isPaused { get; set; }
+    public int IsPaused { get; set; }
 
     public void FastForward_1X()
     {
@@ -45,18 +45,18 @@ public class TimeUI
         timeText.text = text;
     }
 
-    private void togglePauseSprite()
+    private void TogglePauseSprite()
     {
-        pauseButton.image.sprite = pauseSprites[isPaused];
+        pauseButton.image.sprite = pauseSprites[IsPaused];
     }
     public void Pause()
     {
-        isPaused = 1;
-        togglePauseSprite();
+        IsPaused = 1;
+        TogglePauseSprite();
     }
     public void UnPause()
     {
-        isPaused = 0;
-        togglePauseSprite();
+        IsPaused = 0;
+        TogglePauseSprite();
     }
 }

@@ -13,13 +13,13 @@ public abstract class TimedEvent : IEvent
         this.nextDateTime = initialDate;
     }
     public void Run() {
-        actuallyRun();
+        ActuallyRun();
         nextDateTime = nextDateTime.Add(interval);
     }
-    public abstract void actuallyRun();
+    public abstract void ActuallyRun();
     public bool ShouldRun(DateTime currentTime)
     {
-        return currentTime == nextDateTime;
+        return currentTime > nextDateTime;
     }
 
 

@@ -10,12 +10,12 @@ public class TimedEventManager : IEventManager, IEventManagerConfigurator
         Events = new List<TimedEvent>();
     }
 
-    public void add(TimedEvent timedEvent)
+    public void Add(TimedEvent timedEvent)
     {
         Events.Add(timedEvent);
     }
 
-    public void runEvents(DateTime currentTime)
+    public void RunEvents(DateTime currentTime)
     {
         foreach (TimedEvent timedEvent in Events)
         {
