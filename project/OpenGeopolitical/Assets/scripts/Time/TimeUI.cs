@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
-public class TimeUI : MonoBehaviour
+public class TimeUI
 {
     public Button pauseButton;
     [SerializeField]
-    private Sprite[] pauseSprites;
+    public Sprite[] pauseSprites;
     public Button fastForwardButton_one;
     public Button fastForwardButton_two;
     public Button fastForwardButton_three;
     [SerializeField]
-    private Sprite[] fastforwardSprites;
+    public Sprite[] fastforwardSprites;
     public Text timeText;
     public int isPaused { get; set; }
 

@@ -5,6 +5,11 @@ public class TimedEventManager : IEventManager, IEventManagerConfigurator
 {
     public List<TimedEvent> Events { get; set; }
 
+    public TimedEventManager()
+    {
+        Events = new List<TimedEvent>();
+    }
+
     public void add(TimedEvent timedEvent)
     {
         Events.Add(timedEvent);

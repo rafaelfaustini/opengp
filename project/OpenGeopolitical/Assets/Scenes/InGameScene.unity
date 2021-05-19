@@ -159,7 +159,7 @@ RectTransform:
   m_LocalScale: {x: 0.03414934, y: 0.8048332, z: 0.8048332}
   m_Children: []
   m_Father: {fileID: 994823384}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -210,8 +210,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994823387}
-        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+      - m_Target: {fileID: 1237693929}
+        m_TargetAssemblyTypeName: TimeOrchestrator, Assembly-CSharp
         m_MethodName: FastForward_5X
         m_Mode: 1
         m_Arguments:
@@ -260,6 +260,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157874149}
   m_CullTransparentMesh: 1
+--- !u!1 &208297974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208297977}
+  - component: {fileID: 208297976}
+  - component: {fileID: 208297975}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &208297975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208297974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3130764cd7ddc714a853e48114c436ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoTempo: {fileID: 566148159}
+  pauseButton: {fileID: 218903545}
+  fastForwardButton_one: {fileID: 367674824}
+  fastForwardButton_two: {fileID: 157874151}
+  fastForwardButton_three: {fileID: 1838818687}
+  pauseSprites:
+  - {fileID: 21300000, guid: 31856a5b1869b8c4ba4eead0e2df005d, type: 3}
+  - {fileID: 21300000, guid: c25a4b2334f363e4185bab4dd744f676, type: 3}
+  fastforwardSprites:
+  - {fileID: 21300000, guid: 0516211db3e027543af12dd7900231b2, type: 3}
+  - {fileID: 21300000, guid: 68d4fe449d4f93543b37f663b9d2665f, type: 3}
+--- !u!114 &208297976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208297974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 208297975}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &208297977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208297974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218903543
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +429,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994823387}
-        m_TargetAssemblyTypeName: TimeControl, Assembly-CSharp
+      - m_Target: {fileID: 1237693929}
+        m_TargetAssemblyTypeName: TimeOrchestrator, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
@@ -423,7 +510,7 @@ RectTransform:
   m_LocalScale: {x: 0.03414934, y: 0.8048332, z: 0.8048332}
   m_Children: []
   m_Father: {fileID: 994823384}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -474,8 +561,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994823387}
-        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+      - m_Target: {fileID: 1237693929}
+        m_TargetAssemblyTypeName: TimeOrchestrator, Assembly-CSharp
         m_MethodName: FastForward_1X
         m_Mode: 1
         m_Arguments:
@@ -625,7 +712,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &636812616
+--- !u!1 &566148157
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -633,9 +720,88 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 636812619}
-  - component: {fileID: 636812618}
-  - component: {fileID: 636812617}
+  - component: {fileID: 566148158}
+  - component: {fileID: 566148160}
+  - component: {fileID: 566148159}
+  m_Layer: 5
+  m_Name: TimeText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &566148158
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566148157}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.35, y: 1.9262346, z: 5.8217225}
+  m_Children: []
+  m_Father: {fileID: 994823384}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.1, y: 0}
+  m_SizeDelta: {x: 148.712, y: 21.61}
+  m_Pivot: {x: 0.4282909, y: 0.50000006}
+--- !u!114 &566148159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566148157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4392157, g: 0.4392157, b: 0.4392157, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 67674b0c779038e4bbaa9c020c74c576, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 300
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "s\xE1b jan 02 2021 05:43"
+--- !u!222 &566148160
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566148157}
+  m_CullTransparentMesh: 1
+--- !u!1 &584201463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584201466}
+  - component: {fileID: 584201465}
+  - component: {fileID: 584201464}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -643,13 +809,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &636812617
+--- !u!114 &584201464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636812616}
+  m_GameObject: {fileID: 584201463}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
@@ -662,13 +828,13 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &636812618
+--- !u!114 &584201465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636812616}
+  m_GameObject: {fileID: 584201463}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
@@ -677,19 +843,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!4 &636812619
+--- !u!4 &584201466
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636812616}
+  m_GameObject: {fileID: 584201463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994823383
 GameObject:
@@ -702,7 +868,6 @@ GameObject:
   - component: {fileID: 994823384}
   - component: {fileID: 994823386}
   - component: {fileID: 994823385}
-  - component: {fileID: 994823387}
   m_Layer: 5
   m_Name: TimeMenu
   m_TagString: Untagged
@@ -722,10 +887,10 @@ RectTransform:
   m_LocalScale: {x: 1.7379208, y: 0.37199643, z: 0.37199643}
   m_Children:
   - {fileID: 218903544}
-  - {fileID: 1364472331}
   - {fileID: 367674823}
   - {fileID: 157874150}
   - {fileID: 1838818686}
+  - {fileID: 566148158}
   m_Father: {fileID: 1570245137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -772,29 +937,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994823383}
   m_CullTransparentMesh: 1
---- !u!114 &994823387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994823383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbc589f08c98a5d419e68895bf2e7359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseButton: {fileID: 218903545}
-  pauseSprites:
-  - {fileID: 21300000, guid: 31856a5b1869b8c4ba4eead0e2df005d, type: 3}
-  - {fileID: 21300000, guid: c25a4b2334f363e4185bab4dd744f676, type: 3}
-  fastForwardButton_one: {fileID: 367674824}
-  fastForwardButton_two: {fileID: 157874151}
-  fastForwardButton_three: {fileID: 1838818687}
-  fastforwardSprites:
-  - {fileID: 21300000, guid: 0516211db3e027543af12dd7900231b2, type: 3}
-  - {fileID: 21300000, guid: 68d4fe449d4f93543b37f663b9d2665f, type: 3}
-  timeText: {fileID: 1364472332}
 --- !u!1 &1237693928
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,10 +963,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237693928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d30c8479300644fa74cd433d08a31a, type: 3}
+  m_Script: {fileID: 11500000, guid: e3ba32d8ed666de47b265afff86ab812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayToRealTime: 15
 --- !u!4 &1237693930
 Transform:
   m_ObjectHideFlags: 0
@@ -837,87 +978,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1364472330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1364472331}
-  - component: {fileID: 1364472333}
-  - component: {fileID: 1364472332}
-  m_Layer: 5
-  m_Name: TimeText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1364472331
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364472330}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33661002, y: 1.5725998, z: 1.5725998}
-  m_Children: []
-  m_Father: {fileID: 994823384}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.6791935, y: -4.088623}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1364472332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364472330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4392157, g: 0.4392157, b: 0.4392157, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 67674b0c779038e4bbaa9c020c74c576, type: 3}
-    m_FontSize: 15
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 300
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: FRI 01 JAN 2020 00:00
---- !u!222 &1364472333
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364472330}
-  m_CullTransparentMesh: 1
 --- !u!1 &1570245133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1111,7 @@ RectTransform:
   m_LocalScale: {x: 0.03414934, y: 0.8048332, z: 0.8048332}
   m_Children: []
   m_Father: {fileID: 994823384}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1100,8 +1162,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994823387}
-        m_TargetAssemblyTypeName: TimeUI, Assembly-CSharp
+      - m_Target: {fileID: 1237693929}
+        m_TargetAssemblyTypeName: TimeOrchestrator, Assembly-CSharp
         m_MethodName: FastForward_20X
         m_Mode: 1
         m_Arguments:

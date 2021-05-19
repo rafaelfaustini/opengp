@@ -10,7 +10,7 @@ public class TimeManager
 
     private float baseminuteToRealTime;
     private float minuteToRealTime;
-    private int multiplier;
+    private int multiplier=1;
 
     private float timer;
 

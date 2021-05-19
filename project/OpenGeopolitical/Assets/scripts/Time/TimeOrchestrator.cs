@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class TimeOrchestrator : MonoBehaviour
 {
@@ -8,13 +9,23 @@ public class TimeOrchestrator : MonoBehaviour
     TimeManager timeManager;
     TimeUI timeUI;
 
+    [Inject]
+    public void Construct(TimedEventManager timedEventManager, TimeManager timeManager, TimeUI timeUI)
+    {
+        this.timedEventManager = timedEventManager;
+        this.timeManager = timeManager;
+        this.timeUI = timeUI;
+        FastForward_1X();
+        Pause();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         timeManager.HandleFrame(Time.deltaTime);
-        timedEventManager.runEvents(timeManager.CurrentDateTime);
         timeUI.UpdateTime(timeManager.CurrentDateTime);
+        timedEventManager.runEvents(timeManager.CurrentDateTime);
     }
 
     public void Pause()
