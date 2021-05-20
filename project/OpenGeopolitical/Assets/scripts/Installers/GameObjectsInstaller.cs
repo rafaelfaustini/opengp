@@ -12,8 +12,9 @@ public class GameObjectsInstaller : MonoInstaller
     public Button fastForwardButton_three;
     public Sprite[] pauseSprites;
     public Sprite[] fastforwardSprites;
+    private DateTime initialDate = DateTime.Parse("01/01/2021");
 
-    public TimeUI MountTimeUI()
+    private TimeUI MountTimeUI()
     {
         TimeUI timeUI = new TimeUI();
         timeUI.timeText = textoTempo;
@@ -26,21 +27,25 @@ public class GameObjectsInstaller : MonoInstaller
         return timeUI;
     }
 
-    public TimedEventManager MountTimedEventManager()
+    private TimedEventManager MountTimedEventManager()
     {
         TimedEventManager timedEventManager = new TimedEventManager();
-        DateTime initialDate = DateTime.Parse("01/01/2021");
         TimeSpan timeSpan = TimeSpan.FromDays(30);
         TestEvent testEvent = new TestEvent(initialDate, timeSpan);
         timedEventManager.Add(testEvent);
         return timedEventManager;
     }
 
+    private TimeHandler MountTimeHandler()
+    {
+        return new DayHandler(initialDate);
+    }
+
     public override void InstallBindings()
     {
         Container.Bind<TimedEventManager>().FromInstance(MountTimedEventManager());
-        Container.Bind<TimeManager>().FromInstance(new TimeManager(DateTime.Parse("01/01/2021"), 15));
-
+        Container.Bind<TimeManager>().FromInstance(new TimeManager(initialDate, 15));
+        Container.Bind<TimeHandler>().FromInstance(MountTimeHandler());
         Container.Bind<TimeUI>().FromInstance(MountTimeUI());
 
     }

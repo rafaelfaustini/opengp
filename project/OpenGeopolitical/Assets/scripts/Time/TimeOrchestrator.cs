@@ -8,13 +8,15 @@ public class TimeOrchestrator : MonoBehaviour
     TimedEventManager timedEventManager;
     TimeManager timeManager;
     TimeUI timeUI;
+    TimeHandler timeHandler;
 
     [Inject]
-    public void Construct(TimedEventManager timedEventManager, TimeManager timeManager, TimeUI timeUI)
+    public void Construct(TimedEventManager timedEventManager, TimeManager timeManager, TimeUI timeUI, TimeHandler timeHandler)
     {
         this.timedEventManager = timedEventManager;
         this.timeManager = timeManager;
         this.timeUI = timeUI;
+        this.timeHandler = timeHandler;
         FastForward_1X();
     }
 
@@ -22,10 +24,9 @@ public class TimeOrchestrator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool handled = timeManager.HandleFrame(Time.deltaTime);
-        if (handled)
+        if(timeManager.HandleFrame(Time.deltaTime)) timeUI.UpdateTime(timeManager.CurrentDateTime);
+        if (timeHandler.Handle(timeManager.CurrentDateTime))
         {
-            timeUI.UpdateTime(timeManager.CurrentDateTime);
             timedEventManager.RunEvents(timeManager.CurrentDateTime);
         }
     }
