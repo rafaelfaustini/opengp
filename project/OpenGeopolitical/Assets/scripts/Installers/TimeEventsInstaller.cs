@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class GameObjectsInstaller : MonoInstaller
+public class TimeEventsInstaller : MonoInstaller
 {
     public Text textoTempo;
     public Button pauseButton;
