@@ -15,10 +15,18 @@ public class ScenarioEditor : MonoBehaviour
         this.basicDetailsUI = basicDetailsUI;
     }
 
+    public bool Validate()
+    {
+        bool isValidBasicDetails = basicDetailsUI.IsValid();
+        return isValidBasicDetails;
+    }
+
     public void Save()
     {
-        Scenario scenario = new Scenario(basicDetailsUI.GetBasicDetails());
-        HandleSaveScenario handler = new HandleSaveScenario();
-        handler.Handle(scenario);
+        if (!Validate()) return;
+            Scenario scenario = new Scenario(basicDetailsUI.GetBasicDetails());
+            HandleSaveScenario handler = new HandleSaveScenario();
+            handler.Handle(scenario);
+
     }
 }

@@ -30,4 +30,17 @@ public class ScenarioBasicDetailsUI
         BasicDetails.InitialDate = _initialDate;
         return BasicDetails;
     }
+
+    public bool IsValid()
+    {
+        DateTime temp;
+        bool isNameValid = !String.IsNullOrEmpty(NameField.text);
+        bool isDescriptionValid = !String.IsNullOrEmpty(Description.text);
+        bool isInitialDateValid = DateTime.TryParse(InitialDate.text, out temp);
+        if (isNameValid && isDescriptionValid && isInitialDateValid)
+        {
+            return true;
+        }
+        return false;
+    }
 }
