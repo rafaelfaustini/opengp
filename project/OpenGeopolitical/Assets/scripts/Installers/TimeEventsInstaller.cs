@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -12,7 +13,8 @@ public class TimeEventsInstaller : MonoInstaller
     public Button fastForwardButton_three;
     public Sprite[] pauseSprites;
     public Sprite[] fastforwardSprites;
-    private DateTime initialDate = DateTime.Parse("01/01/2021");
+    private const string initialDateString = "2022-01-01 00:00";
+    private DateTime initialDate = DateTime.ParseExact(initialDateString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
 
     private TimeUI MountTimeUI()
     {
